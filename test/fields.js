@@ -7,4 +7,5 @@ exports['Create text field'] = function (test) {
     
     test.ok(field);
     test.equal(field.title, 'First Name');
+    test.equal(field.type, 'text');
 }
