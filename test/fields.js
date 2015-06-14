@@ -19,3 +19,22 @@ exports['Create required text field'] = function (test) {
     test.equal(field.type, 'text');
     test.ok(field.required);
 }
+
+exports['Create date field'] = function (test) {
+    var builder = Fields.date('Created');
+    var field = builder.build();
+    
+    test.ok(field);
+    test.equal(field.title, 'Created');
+    test.equal(field.type, 'date');
+}
+
+exports['Create required date field'] = function (test) {
+    var builder = Fields.date('Created').required();
+    var field = builder.build();
+    
+    test.ok(field);
+    test.equal(field.title, 'Created');
+    test.equal(field.type, 'date');
+    test.ok(field.required);
+}
