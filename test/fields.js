@@ -38,3 +38,24 @@ exports['Create required date field'] = function (test) {
     test.equal(field.type, 'date');
     test.ok(field.required);
 }
+
+exports['Create reference field'] = function (test) {
+    var builder = Fields.reference('Customer').entity('customer');
+    var field = builder.build();
+    
+    test.ok(field);
+    test.equal(field.title, 'Customer');
+    test.equal(field.type, 'reference');
+    test.equal(field.entity, 'customer');
+}
+
+exports['Create required reference field'] = function (test) {
+    var builder = Fields.reference('Customer').required().entity('customer');
+    var field = builder.build();
+    
+    test.ok(field);
+    test.equal(field.title, 'Customer');
+    test.equal(field.type, 'reference');
+    test.equal(field.entity, 'customer');
+    test.ok(field.required);
+}
