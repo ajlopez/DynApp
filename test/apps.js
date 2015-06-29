@@ -107,6 +107,15 @@ exports['build application with two related entities'] = function (test) {
     test.equal(app.entities.department.fields.name.type, 'text');
     test.equal(app.entities.department.fields.name.title, 'Name');
     test.ok(app.entities.department.fields.name.required);
+    
+    test.ok(app.entities.department.relations);
+    test.ok(Array.isArray(app.entities.department.relations));
+    test.equal(app.entities.department.relations.length, 1);
+    
+    var relation = app.entities.department.relations[0];
+    
+    test.strictEqual(relation.entity, app.entities.employee);
+    test.strictEqual(relation.field, app.entities.employee.fields.department);
 
     test.ok(app.entities.employee);
     test.equal(app.entities.employee.descriptor, 'Employee');
