@@ -2,6 +2,10 @@
 
 Dynamic Applications, defined using JavaScript/Node.js
 
+## References
+
+- [Application Development with RAD Framework AllcountJS](http://www.toptal.com/nodejs/rapid-application-development-with-allcountjs)
+
 ## Samples
 
 TBD
